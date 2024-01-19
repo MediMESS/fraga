@@ -9,9 +9,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import MobileNavbarItem, {
   DesktopNavbarItem,
-} from "src/components/Layout/HomeLayout/Navbar/NavbarItem";
+} from "src/shared/Layout/HomeLayout/Navbar/NavbarItem";
 import { Link } from "react-router-dom";
-import { theme } from "src/components/Layout/theme";
+import { theme } from "src/shared/Layout/theme";
 
 interface Props {
   window?: () => Window;

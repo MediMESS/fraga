@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { Box, ThemeProvider } from "@mui/material";
-import { theme } from "src/components/Layout/theme";
-import Navbar from "src/components/Layout/HomeLayout/Navbar";
+import { theme } from "src/shared/Layout/theme";
+import Navbar from "src/shared/Layout/HomeLayout/Navbar";
 
 const HomeLayout = ({ children }: PropsWithChildren) => {
   return (

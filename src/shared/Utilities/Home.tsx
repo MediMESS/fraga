@@ -1,5 +1,5 @@
 import Header from "src/components/Header";
-import HomeLayout from "src/components/Layout/HomeLayout";
+import HomeLayout from "src/shared/Layout/HomeLayout";
 import References from "src/components/References";
 import IndustrySectors from "src/components/IndustrySectors";
 import Contact from "src/components/Contact";

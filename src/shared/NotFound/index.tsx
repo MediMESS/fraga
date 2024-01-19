@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { theme } from "src/components/Layout/theme";
+import { theme } from "src/shared/Layout/theme";
 
 const NotFound = () => (
   <ThemeProvider theme={theme}>

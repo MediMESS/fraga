@@ -6,11 +6,11 @@ import {
 } from "material-ui-popup-state/hooks";
 import { Box, List, ListItemButton, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
-import { NavbarItemProp } from "src/components/Layout/HomeLayout/Navbar/Navbar";
+import { NavbarItemProp } from "src/shared/Layout/HomeLayout/Navbar/Navbar";
 import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 import Collapse from "@mui/material/Collapse";
 import { useState } from "react";
-import { theme } from "src/components/Layout/theme";
+import { theme } from "src/shared/Layout/theme";
 
 export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
   const { text, to, children } = navItem;
