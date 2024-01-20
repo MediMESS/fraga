@@ -8,19 +8,19 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     buttonText: "En Savoir Plus",
-    imgUrl: "./assets/home/header/zzessential.png",
+    imgUrl: "https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill",
     text: "Z & Z ENGINEERING vous accompagne dans toutes les étapes de votre projet",
     to: "/zz-engineering/contact",
   },
   {
     buttonText: "Consultez nous",
-    imgUrl: "./assets/home/header/engineer-team.png",
+    imgUrl: "https://via.assets.so/movie.png?id=2&q=95&w=360&h=360&fit=fill",
     text: "Une équipe d'ingénieurs expérimentés qui répond à vos besoins les plus pointus",
     to: "/zz-engineering/contact",
   },
   {
     buttonText: "Cliquez Maintenant",
-    imgUrl: "./assets/home/header/gas-factory.png",
+    imgUrl: "https://via.assets.so/movie.png?id=3&q=95&w=360&h=360&fit=fill",
     text: "Nous proposons une large gamme d’étude et services pour les unités de chaînes pétrolières et gazières",
     to: "/zz-engineering/contact",
   },
@@ -36,16 +36,17 @@ const HeaderSwiper: React.FC = () => {
         loop
         modules={[Navigation, Autoplay]}
         style={{ height: "100%" }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
       >
-        {slides.map(({ text, buttonText, imgUrl, to }) => (
+        {slides.map(({ text, buttonText, to }) => (
           <SwiperSlide
             key={text}
             style={{
-              backgroundImage: `url(${imgUrl})`,
+              // backgroundImage: `url(${imgUrl})`,
+              backgroundColor: "deepskyblue",
               backgroundSize: "cover",
               backgroundPosition: "center",
               height: "100%",

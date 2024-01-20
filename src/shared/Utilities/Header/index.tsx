@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import HeaderSwiper from "src/components/HeaderSwiper";
-import BusinessAreas from "src/components/BusinessAreas";
+import HeaderSwiper from "src/shared/Utilities/Header/HeaderSwiper";
+import BusinessAreas from "src/shared/Utilities/Header/BusinessAreas";
 
 const Header = () => {
   return (
