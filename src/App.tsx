@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "src/pages/Home";
 import NotFound from "src/shared/NotFound";
-import { Home } from "src/shared/Utilities/Home";
 
 const App = () => {
   return (

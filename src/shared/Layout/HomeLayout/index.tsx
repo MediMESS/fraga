@@ -6,14 +6,20 @@ import Navbar from "src/shared/Layout/HomeLayout/Navbar";
 const HomeLayout = ({ children }: PropsWithChildren) => {
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
       <Box
         sx={{
-          position: "relative",
-          top: { xs: "56px", sm: "64px" },
+          width: "100vw",
         }}
       >
-        {children}
+        <Navbar />
+        <Box
+          sx={{
+            position: "relative",
+            top: { xs: "56px", sm: "64px" },
+          }}
+        >
+          {children}
+        </Box>
       </Box>
     </ThemeProvider>
   );
