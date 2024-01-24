@@ -1,8 +1,8 @@
 // Import necessary modules from Material-UI and framer-motion
-import React, { useState } from "react";
-import { Container, Typography, IconButton, Divider } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import { motion, AnimatePresence } from "framer-motion";
+import { Container, Divider, IconButton, Typography } from "@mui/material";
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
 
 // Create your functional component
 const FAQSection: React.FC = () => {
@@ -25,7 +25,7 @@ const FAQSection: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" id="FAQs">
       {/* Map through the FAQ data and render each question with smooth transition */}
       {faqData.map((faq, index) => (
         <div key={index}>

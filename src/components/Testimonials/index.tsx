@@ -1,4 +1,3 @@
-// Import necessary modules from Material-UI and Swiper
 import {
   NavigateBeforeOutlined as NavigateBeforeIcon,
   NavigateNextRounded as NavigateNextIcon,
@@ -54,8 +53,8 @@ const TestimonialSlider = () => {
           modules={[Pagination, Navigation]}
           loop
           navigation={{
-            nextEl: ".custom-swiper-button-next",
-            prevEl: ".custom-swiper-button-prev",
+            nextEl: ".testimonials-swiper-button-next",
+            prevEl: ".testimonials-swiper-button-prev",
           }}
           pagination={{
             clickable: true,
@@ -128,7 +127,7 @@ const TestimonialSlider = () => {
         ></div>
         {/* Custom navigation buttons */}
         <IconButton
-          className="custom-swiper-button-prev"
+          className="testimonials-swiper-button-prev"
           style={{
             position: "absolute",
             left: "10px",
@@ -140,7 +139,7 @@ const TestimonialSlider = () => {
           <NavigateBeforeIcon />
         </IconButton>
         <IconButton
-          className="custom-swiper-button-next"
+          className="testimonials-swiper-button-next"
           style={{
             position: "absolute",
             right: "10px",

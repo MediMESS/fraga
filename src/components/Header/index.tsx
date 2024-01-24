@@ -1,7 +1,7 @@
-import "swiper/swiper-bundle.css";
 import { Box, Button, Typography } from "@mui/material";
-import "./Header.css";
 import { Link } from "react-router-dom";
+import "swiper/swiper-bundle.css";
+import "./Header.css";
 
 const slides = {
   buttonText: "En Savoir Plus",
