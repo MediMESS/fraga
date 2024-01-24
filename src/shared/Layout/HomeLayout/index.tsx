@@ -1,14 +1,14 @@
-import { PropsWithChildren } from "react";
 import { Box, ThemeProvider } from "@mui/material";
-import { theme } from "src/shared/Layout/theme";
+import { PropsWithChildren } from "react";
 import Navbar from "src/shared/Layout/HomeLayout/Navbar";
+import { theme } from "src/shared/Layout/theme";
 
 const HomeLayout = ({ children }: PropsWithChildren) => {
   return (
     <ThemeProvider theme={theme}>
       <Box
         sx={{
-          width: "100vw",
+          width: "100%",
         }}
       >
         <Navbar />

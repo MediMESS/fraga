@@ -1,110 +1,104 @@
-// export default theme;
-
 import { createTheme } from "@mui/material/styles";
-import { PaletteOptions } from "@mui/material/styles/createPalette";
 
-// Extend the default MUI palette type to include the tertiary color
-interface CustomPalette extends PaletteOptions {
-  tertiary?: {
-    main: string;
-    dark: string;
-    light: string;
-    contrastText: string;
-  };
-}
-
+const buttonTextStyle = {
+  transition: "all .2s ease-in-out",
+  "&:hover": {
+    background: "transparent",
+    color: "#867869",
+    textDecoration: "underline",
+  },
+};
 // Create the theme
 export const theme = createTheme({
+  components: {
+    MuiListItemButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: buttonTextStyle,
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          padding: "8px 20px",
+        },
+        text: {
+          transition: "text-decoration .5s ease-in-out",
+          "&:hover, &:focus, &:active": {
+            background: "transparent",
+            color: "#867869",
+            textDecoration: "underline",
+          },
+        },
+      },
+    },
+  },
   palette: {
-    primary: {
-      main: "#000000",
-      // dark: "#cc0000",
-      // light: "#ff3333",
-      light: "#333",
-      contrastText: "#ffffff",
-    },
     secondary: {
-      main: "#555",
-      // dark: "#0056b3",
-      // light: "#66a3ff",
-      contrastText: "#ffffff",
+      main: "#E8D8C8",
+      dark: "#867869",
+      light: "#cabaab",
+      contrastText: "#333333",
     },
-    tertiary: {
-      main: "#00cc66", // Adjust as needed
-      dark: "#008040",
-      light: "#33ff99",
-      contrastText: "#ffffff", // White for contrast
+    primary: {
+      main: "#333333",
+      contrastText: "#ffffff",
     },
     background: {
-      default: "#f5f5f5", // Light background color
+      default: "#F7F7F7", // Light background color
       paper: "#ffffff", // Light paper color
     },
-    paper: {
-      // Light paper color
-      main: "#ffffff",
-      dark: "#e0e0e0",
-    },
-  } as CustomPalette, // Type assertion to include the tertiary color
+  }, // Type assertion to include the tertiary color
   typography: {
-    fontFamily: "Poppins, sans-serif", // Modern sans-serif font
+    fontFamily: "Quattrocento, serif", // Modern sans-serif font
     h1: {
-      fontSize: "3rem",
-      fontWeight: 700,
+      fontSize: "56px",
+      fontWeight: "bold",
       lineHeight: 1.2,
+      fontFamily: "Cormorant Garamond, serif",
     },
     h2: {
-      fontSize: "2.5rem",
-      fontWeight: 700,
-      lineHeight: 1.3,
+      fontSize: "48px",
+      fontWeight: "bold",
+      lineHeight: 1.2,
+      fontFamily: "Cormorant Garamond, serif",
     },
     h3: {
-      fontSize: "2rem",
-      fontWeight: 700,
-      lineHeight: 1.4,
+      fontSize: "40px",
+      fontWeight: "bold",
+      lineHeight: 1.2,
+      fontFamily: "Cormorant Garamond, serif",
     },
     h4: {
-      fontSize: "1.75rem",
-      fontWeight: 700,
-      lineHeight: 1.5,
+      fontSize: "32px",
+      fontWeight: "bold",
+      lineHeight: 1.2,
+      fontFamily: "Cormorant Garamond, serif",
     },
     h5: {
-      fontSize: "1.5rem",
-      fontWeight: 700,
-      lineHeight: 1.6,
-    },
-    h6: {
-      fontSize: "1.5rem",
-      fontWeight: 700,
-      lineHeight: 1.7,
+      fontSize: "40px",
+      fontWeight: "bold",
+      lineHeight: 1.2,
+      fontFamily: "Cormorant Garamond, serif",
     },
     body1: {
-      fontSize: "1.25rem",
-      lineHeight: 1.6,
-    },
-    body2: {
-      fontSize: "1rem",
-      lineHeight: 1.6,
-    },
-    button: {
-      fontSize: "0.875rem",
-      fontWeight: 700,
-    },
-    subtitle1: {
-      fontSize: "1.125rem",
+      fontSize: "16px",
       lineHeight: 1.5,
     },
-    subtitle2: {
-      fontSize: "1rem",
-      lineHeight: 1.6,
+    body2: {
+      fontSize: "14px",
+      lineHeight: 1.5,
     },
-    caption: {
-      fontSize: "0.75rem",
-      lineHeight: 1.6,
+    button: {
+      fontSize: "16px",
+      fontWeight: "normal",
+      lineHeight: 1.5,
     },
-    overline: {
-      fontSize: "0.625rem",
-      fontWeight: 700,
-      letterSpacing: "0.1em",
+    subtitle1: {
+      fontSize: "14px",
+      lineHeight: 1.5,
     },
   },
 });

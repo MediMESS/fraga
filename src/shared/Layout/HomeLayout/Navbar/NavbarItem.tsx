@@ -1,16 +1,15 @@
+import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
+import { Box, List, ListItemButton, ListItemText } from "@mui/material";
+import Collapse from "@mui/material/Collapse";
 import Menu from "@mui/material/Menu";
 import {
-  usePopupState,
-  bindTrigger,
   bindMenu,
+  bindTrigger,
+  usePopupState,
 } from "material-ui-popup-state/hooks";
-import { Box, List, ListItemButton, ListItemText } from "@mui/material";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavbarItemProp } from "src/shared/Layout/HomeLayout/Navbar/Navbar";
-import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
-import Collapse from "@mui/material/Collapse";
-import { useState } from "react";
-import { theme } from "src/shared/Layout/theme";
 
 export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
   const { text, to, children } = navItem;
@@ -18,7 +17,12 @@ export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
 
   if (children)
     return (
-      <Box>
+      <Box
+        sx={{
+          backgroundColor: "background.default",
+          color: "primary.main",
+        }}
+      >
         <ListItemButton {...bindTrigger(popupState)}>
           <ListItemText primary={text} />
           {popupState.isOpen ? <ArrowDropUp /> : <ArrowDropDown />}
@@ -28,12 +32,7 @@ export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
           transformOrigin={{ vertical: "top", horizontal: "left" }}
         >
-          <List
-            sx={{
-              backgroundImage: `linear-gradient(to right, ${theme.palette.primary.light}, ${theme.palette.primary.light})`,
-              color: "primary.contrastText",
-            }}
-          >
+          <List>
             {children.map(({ text, to }) => (
               <ListItemButton
                 key={text}
