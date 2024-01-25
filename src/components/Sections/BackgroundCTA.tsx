@@ -1,53 +1,64 @@
-// Import necessary modules from Material-UI
-import { Container, Grid, Typography, Button } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 
 // Create your functional component
 const BackgroundCTA = () => {
   return (
-    <Container
-      maxWidth="md"
-      style={{ backgroundColor: "#f0f0f0", padding: "20px" }}
+    <Box
+      sx={{
+        backgroundColor: "secondary.main",
+        padding: { xs: "32px 24px", lg: "80px 64px" },
+      }}
     >
-      {/* Grid container to hold text and buttons */}
-      <Grid container spacing={3} alignItems="center">
-        {/* Grid item for the text on the left */}
-        <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom>
-            Your Title
-          </Typography>
-          <Typography variant="body1">
-            Your text goes here. Customize as needed.
-          </Typography>
-        </Grid>
-        {/* Grid item for the buttons on the right */}
-        <Grid item xs={12} md={6}>
-          <Grid container spacing={2}>
+      <Box
+        sx={{
+          maxWidth: "1440px",
+        }}
+      >
+        {/* Grid container to hold text and buttons */}
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="flex-start"
+          rowGap="20px"
+        >
+          {/* Grid item for the text on the left */}
+          <Grid
+            item
+            xs={12}
+            md={10}
+            sx={{
+              display: "flex",
+              gap: "20px",
+              flexDirection: "column",
+            }}
+          >
+            <Typography variant="h2">
+              Discover our exquisite fragrance collection
+            </Typography>
+            <Typography variant="body1">
+              Indulge in the captivating scents of Fraga, crafted with precision
+              and passion.
+            </Typography>
+          </Grid>
+          {/* Grid item for the buttons on the right */}
+          <Grid item xs={12} md={2}>
             {/* First button */}
-            <Grid item xs={12} md={6}>
-              <Button
-                variant="contained"
-                color="primary"
-                fullWidth
-                size="large"
-              >
-                Button 1
-              </Button>
-            </Grid>
-            {/* Second button */}
-            <Grid item xs={12} md={6}>
-              <Button
-                variant="contained"
-                color="secondary"
-                fullWidth
-                size="large"
-              >
-                Button 2
-              </Button>
-            </Grid>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{
+                marginRight: "20px",
+              }}
+            >
+              Shop Now
+            </Button>
+            <Button variant="contained" color="secondary">
+              Visit
+            </Button>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Box>
+    </Box>
   );
 };
 
