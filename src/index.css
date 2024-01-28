@@ -7,3 +7,10 @@ body, html {
 * {
   box-sizing: border-box;
 }
+
+.swiper-pagination-bullet {
+  background-color: #cabaab;
+}
+.swiper-pagination-bullet-active {
+  background-color: #333333;
+}
