@@ -12,6 +12,7 @@ const BackgroundCTA = () => {
       <Box
         sx={{
           maxWidth: "1440px",
+          margin: "0 auto",
         }}
       >
         {/* Grid container to hold text and buttons */}
@@ -28,7 +29,7 @@ const BackgroundCTA = () => {
             md={10}
             sx={{
               display: "flex",
-              gap: "20px",
+              gap: { xs: "20px", lg: "42px" },
               flexDirection: "column",
             }}
           >

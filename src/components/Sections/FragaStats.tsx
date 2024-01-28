@@ -49,7 +49,7 @@ const BestSeller = () => {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "center",
-                    gap: { xs: "20px", lg: "42px" },
+                    gap: { xs: "20px", lg: "32px" },
                   }}
                 >
                   <Typography variant="h2">Magic is in the Air...</Typography>
