@@ -22,7 +22,7 @@ const NotFound = () => (
     >
       <Box sx={{ height: { xs: 150, md: 250 }, zIndex: 0 }}>
         <img
-          src="../assets/not-found.svg"
+          src="./assets/not-found.svg"
           alt="factory1"
           style={{
             width: "100%",
@@ -36,7 +36,7 @@ const NotFound = () => (
       <Typography variant="body1" gutterBottom>
         Désolé, la page que vous recherchez n'existe pas.
       </Typography>
-      <Button component={Link} to="/zz-engineering/" variant="text">
+      <Button component={Link} to="/fraga/" variant="text">
         Revenir à l'acceuil
       </Button>
     </Container>
