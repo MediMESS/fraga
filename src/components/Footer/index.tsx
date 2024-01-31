@@ -147,7 +147,7 @@ const Footer = () => {
           <Divider />
           {/* Logo Section */}
           <Typography variant="body1">
-            2023 Fraga. All rights reserved.
+            2024 Fraga. All rights reserved.
           </Typography>
         </Box>
       </Box>
