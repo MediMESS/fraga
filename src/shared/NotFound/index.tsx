@@ -37,7 +37,7 @@ const NotFound = () => (
         Sorry, The page you're lookin for doesn't exist.
       </Typography>
       <Button component={Link} to="/fraga/" variant="text">
-        Revenir à l'acceuil
+        Go Back Home
       </Button>
     </Container>
   </ThemeProvider>
