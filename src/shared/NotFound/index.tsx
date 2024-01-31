@@ -31,10 +31,10 @@ const NotFound = () => (
         />
       </Box>
       <Typography variant="h4" component="div" gutterBottom>
-        404 - Page Introuvable
+        404 - Page Not Found
       </Typography>
       <Typography variant="body1" gutterBottom>
-        Désolé, la page que vous recherchez n'existe pas.
+        Sorry, The page you're lookin for doesn't exist.
       </Typography>
       <Button component={Link} to="/fraga/" variant="text">
         Revenir à l'acceuil
