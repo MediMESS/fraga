@@ -75,7 +75,7 @@ const TheFragaristas = () => {
       {/* Swiper component */}
       <Swiper
         modules={[Pagination, Navigation]}
-        spaceBetween={10}
+        spaceBetween={32}
         slidesPerView={isMobile ? 1 : 3}
         loop
         navigation={{
