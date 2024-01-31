@@ -109,7 +109,7 @@ const Navbar = (props: Props) => {
                 variant="h6"
                 component={Link}
                 sx={{ flexGrow: 1, display: "flex" }}
-                to="/"
+                to="/fraga/"
               >
                 <img
                   src="./assets/logo.png"
