@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { scrollToWonderland } from "src/shared/Utils";
+import { scrollToFAQs, scrollToWonderland } from "src/shared/Utils";
 import "swiper/swiper-bundle.css";
 import "./Header.css";
 
@@ -71,11 +71,12 @@ const Header = () => {
             <Button
               variant="outlined"
               color="info"
+              onClick={scrollToFAQs}
               sx={{
                 width: "150px",
               }}
             >
-              En Savoir Plus
+              Discover More
             </Button>
           </Box>
         </Box>
