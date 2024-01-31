@@ -13,7 +13,7 @@ const Header = () => {
     <Box
       sx={{
         backgroundImage: `url(./assets/header.png)`,
-        backgroundColor: "deepskyblue",
+        backgroundColor: theme.palette.secondary.main,
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: { xs: "500px", md: "800px" },
