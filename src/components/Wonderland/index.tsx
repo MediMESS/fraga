@@ -22,11 +22,11 @@ const Wonderland = () => {
 
   // Array of image URLs
   const imageUrls = [
-    "/assets/Wonderland/Wonderland-0.png",
-    "/assets/Wonderland/Wonderland-1.png",
-    "/assets/Wonderland/Wonderland-2.png",
-    "/assets/Wonderland/Wonderland-3.png",
-    "/assets/Wonderland/Wonderland-4.png",
+    "./assets/Wonderland/Wonderland-0.png",
+    "./assets/Wonderland/Wonderland-1.png",
+    "./assets/Wonderland/Wonderland-2.png",
+    "./assets/Wonderland/Wonderland-3.png",
+    "./assets/Wonderland/Wonderland-4.png",
   ];
 
   return (

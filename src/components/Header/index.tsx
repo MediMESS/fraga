@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(/assets/header.png)`,
+        backgroundImage: `url(./assets/header.png)`,
         backgroundColor: "deepskyblue",
         backgroundSize: "cover",
         backgroundPosition: "center",

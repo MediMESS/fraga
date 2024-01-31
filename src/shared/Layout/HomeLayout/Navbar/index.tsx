@@ -112,7 +112,7 @@ const Navbar = (props: Props) => {
                 to="/"
               >
                 <img
-                  src="/assets/logo.png"
+                  src="./assets/logo.png"
                   alt="Logo"
                   style={{ height: "50px" }}
                 />
@@ -179,7 +179,7 @@ const Navbar = (props: Props) => {
                 }}
               >
                 <img
-                  src="/assets/logo.png"
+                  src="./assets/logo.png"
                   alt="Logo"
                   style={{
                     height: "50px",

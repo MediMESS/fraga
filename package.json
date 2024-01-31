@@ -1,5 +1,6 @@
 {
-  "name": "vite-navbar-boilerplate",
+  "name": "fraga-website",
+  "homepage": "https://medimess.github.io/fraga/",
   "private": true,
   "version": "0.0.0",
   "type": "module",

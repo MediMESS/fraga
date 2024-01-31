@@ -85,7 +85,7 @@ const Footer = () => {
             {/* Logo Section */}
             <LinkRouterDOM to="/">
               <img
-                src="/assets/logo-primary.png"
+                src="./assets/logo-primary.png"
                 alt="Logo"
                 style={{
                   height: "60px",

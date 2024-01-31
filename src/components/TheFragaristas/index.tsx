@@ -19,21 +19,21 @@ import "swiper/swiper-bundle.css";
 const theFragaristas = [
   {
     name: "Isabella Rossi",
-    avatar: "/assets/TheFragaristas/TheFragaristas-0.png",
+    avatar: "./assets/TheFragaristas/TheFragaristas-0.png",
     job: "Head Perfumer",
     description:
       "Master of Elegance, blending sophistication into every fragrance with an artistry that speaks to the refined tastes of our clients.",
   },
   {
     name: "Sophie Laurent",
-    avatar: "/assets/TheFragaristas/TheFragaristas-1.png",
+    avatar: "./assets/TheFragaristas/TheFragaristas-1.png",
     job: "Customer Experience Specialist",
     description:
       "The Heartbeat of Hospitality, infusing warmth and charm into every interaction, ensuring our customers feel pampered and valued.",
   },
   {
     name: "Olivia Harper",
-    avatar: "/assets/TheFragaristas/TheFragaristas-2.png",
+    avatar: "./assets/TheFragaristas/TheFragaristas-2.png",
     job: "Marketing Maven",
     description:
       "Strategic Allure, crafting enchanting narratives that bring our fragrances to life, making each one a story waiting to be told.",
@@ -41,7 +41,7 @@ const theFragaristas = [
   {
     name: "Victoria Sterling",
     job: "Style Consultant",
-    avatar: "/assets/TheFragaristas/TheFragaristas-3.png",
+    avatar: "./assets/TheFragaristas/TheFragaristas-3.png",
     description:
       "Elegance Personified, guiding our clients with a keen eye for sophistication, helping them discover scents that complement their unique style.",
   },

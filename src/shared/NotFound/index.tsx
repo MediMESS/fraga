@@ -22,7 +22,7 @@ const NotFound = () => (
     >
       <Box sx={{ height: { xs: 150, md: 250 }, zIndex: 0 }}>
         <img
-          src="./assets/not-found.svg"
+          src="../assets/not-found.svg"
           alt="factory1"
           style={{
             width: "100%",

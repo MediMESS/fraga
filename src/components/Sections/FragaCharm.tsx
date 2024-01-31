@@ -45,7 +45,7 @@ const FragaCharm = () => {
                 component={motion.div}
                 className="shadow"
                 sx={{
-                  backgroundImage: "url(/assets/FragaCharm.png)",
+                  backgroundImage: "url(./assets/FragaCharm.png)",
                   height: { xs: "300px", lg: "520px" },
                   width: "100%",
                   backgroundSize: "cover",
