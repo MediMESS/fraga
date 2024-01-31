@@ -14,3 +14,29 @@ body, html {
 .swiper-pagination-bullet-active {
   background-color: #333333;
 }
+
+.shadow {
+    /* First drop shadow */
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.1),
+                /* Second drop shadow */
+                0 2px 4px -2px rgba(0, 0, 0, 0.06);  
+}
+
+
+@media screen and (min-width: 0) {
+  #FAQsID,
+  #FragaCharmID,
+  #WonderlandID,
+  #TheFragaristasID {
+  scroll-margin-top: 56px;
+}
+}
+
+@media screen and (min-width: 600px) {
+  #FAQsID,
+  #FragaCharmID,
+  #WonderlandID,
+  #TheFragaristasID {
+    scroll-margin-top: 64px; /* or adjust as needed */
+  }
+}

@@ -9,10 +9,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import MobileNavbarItem, {
-  DesktopNavbarItem,
-} from "src/shared/Layout/HomeLayout/Navbar/NavbarItem";
+import { DesktopNavbarItem } from "src/shared/Layout/HomeLayout/Navbar/NavbarItem";
 import { theme } from "src/shared/Layout/theme";
+import {
+  scrollToFAQs,
+  scrollToFragaCharm,
+  scrollToTheFragaristas,
+  scrollToWonderland,
+} from "src/shared/Utils";
 
 interface Props {
   window?: () => Window;
@@ -21,50 +25,36 @@ interface Props {
 /**
  * NavItems.
  */
-export const navLinks = [
-  { text: "Secteurs d'activités", to: "/zz-engineering/secteurs-activites" },
-  { text: "Contact", to: "/zz-engineering/contact" },
+export const navButtons = [
+  { text: "FragaCharm", onClick: scrollToFragaCharm },
   {
-    text: "Nos Services",
-    to: "",
-    children: [
-      { text: "Etude HSE", to: "/zz-engineering/etude-hse" },
-      {
-        text: "Engineering & Design",
-        to: "/zz-engineering/engineering-design",
-      },
-      {
-        text: "Éfficacité Énergétique",
-        to: "/zz-engineering/energetic-efficiency",
-      },
-      {
-        text: "Certification",
-        to: "/zz-engineering/certification",
-      },
-      {
-        text: "Consulting",
-        to: "/zz-engineering/consulting",
-      },
-      { text: "Formation", to: "/zz-engineering/formation" },
-    ],
+    text: "Wonderland",
+    onClick: scrollToWonderland,
+  },
+  {
+    text: "The Fragaristas",
+    onClick: scrollToTheFragaristas,
   },
 ];
 
 /**
  * Navbar Buttons.
  */
-const navButtons = [
+const ctaButtons = [
   {
     text: "FAQs",
-    to: "#FAQs",
+    onClick: scrollToFAQs,
     variant: "text" as ButtonProps["variant"],
     color: "primary" as ButtonProps["color"],
   },
   {
-    text: "Shop now",
-    to: "#FAQs",
+    text: "Shop Now",
+    onClick: () => {},
     variant: "contained" as ButtonProps["variant"],
     color: "secondary" as ButtonProps["color"],
+    style: {
+      width: "fit-content",
+    },
   },
 ];
 
@@ -94,7 +84,7 @@ const Navbar = (props: Props) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { md: "none" } }}
+            sx={{ display: { md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -112,25 +102,24 @@ const Navbar = (props: Props) => {
             <Box
               sx={{
                 display: "flex",
+                gap: "24px",
               }}
             >
               <Typography
                 variant="h6"
                 component={Link}
                 sx={{ flexGrow: 1, display: "flex" }}
-                to="/zz-engineering/"
+                to="/"
               >
                 <img
-                  src="./assets/logo.svg"
+                  src="/assets/logo.png"
                   alt="Logo"
-                  style={{ height: "40px", marginRight: "10px" }}
+                  style={{ height: "50px" }}
                 />
               </Typography>
-              <Box sx={{ display: "flex" }}>
-                {navLinks.map((link) => (
-                  <DesktopNavbarItem key={link.text} navItem={link} />
-                ))}
-              </Box>
+              {navButtons.map((navButton) => (
+                <DesktopNavbarItem key={navButton.text} navButton={navButton} />
+              ))}
             </Box>
             <Box
               sx={{
@@ -138,11 +127,10 @@ const Navbar = (props: Props) => {
                 gap: "24px",
               }}
             >
-              {navButtons.map((button) => (
+              {ctaButtons.map((button) => (
                 <Button
                   variant={button.variant}
-                  component={Link}
-                  to={button.to}
+                  onClick={button.onClick}
                   color={button.color}
                 >
                   {button.text}
@@ -170,33 +158,65 @@ const Navbar = (props: Props) => {
             },
           }}
         >
-          <Box sx={{ textAlign: "center" }}>
-            <Link to="/zz-engineering/">
+          <Box
+            sx={{
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+          >
+            <Link to="/">
               <Typography
                 variant="h6"
                 sx={{
-                  my: 2,
+                  marginTop: "20px",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                 }}
               >
                 <img
-                  src="./assets/logo-on-primary.svg"
+                  src="/assets/logo.png"
                   alt="Logo"
                   style={{
-                    height: "40px",
+                    height: "50px",
                     color: theme.palette.primary.main,
                   }}
                 />
               </Typography>
             </Link>
             <Divider />
-            {navLinks.map((link) => (
-              <MobileNavbarItem key={link.text} navItem={link} />
-            ))}
             {navButtons.map((button) => (
-              <Button variant={button.variant} component={Link} to={button.to}>
+              <Button
+                variant="text"
+                onClick={button.onClick}
+                sx={{
+                  margin: 0,
+                  paddingLeft: 0,
+                  justifyContent: "flex-start",
+                }}
+              >
+                {button.text}
+              </Button>
+            ))}
+            <Divider />
+
+            {ctaButtons.map((button) => (
+              <Button
+                variant={button.variant}
+                onClick={button.onClick}
+                sx={{
+                  margin: 0,
+                  paddingLeft: button.variant === "text" ? 0 : "auto",
+                  width:
+                    button.variant === "contained" ? "fit-content" : "auto",
+                  justifyContent:
+                    button.variant === "text" ? "flex-start" : "center",
+                }}
+              >
                 {button.text}
               </Button>
             ))}

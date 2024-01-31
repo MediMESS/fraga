@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const BestSeller = () => {
+const FragaCharm = () => {
   const fadeInAnimation = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -112,6 +112,7 @@ const BestSeller = () => {
             <AnimatePresence>
               <Box
                 component={motion.div}
+                className="shadow"
                 sx={{
                   backgroundImage: "url(/assets/fragrances.png)",
                   height: { xs: "300px", lg: "520px" },
@@ -135,4 +136,4 @@ const BestSeller = () => {
   );
 };
 
-export default BestSeller;
+export default FragaCharm;

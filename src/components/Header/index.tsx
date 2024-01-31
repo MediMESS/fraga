@@ -1,56 +1,87 @@
 import { Box, Button, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { scrollToWonderland } from "src/shared/Utils";
 import "swiper/swiper-bundle.css";
 import "./Header.css";
 
-const slides = {
-  buttonText: "En Savoir Plus",
-  imgUrl: "https://via.assets.so/movie.png?id=20&q=95&w=360&h=360&fit=fill",
-  text: "Z & Z ENGINEERING vous accompagne dans toutes les étapes de votre projet",
-  to: "/zz-engineering/contact",
-};
+const Header = () => {
+  const theme = useTheme();
+  const isXs = useMediaQuery(theme.breakpoints.down("md"));
 
-const HeaderSwiper: React.FC = () => {
-  const { text, buttonText, imgUrl, to } = slides;
   return (
     <Box
-      key={text}
       sx={{
-        backgroundImage: `url(${imgUrl})`,
+        backgroundImage: `url(/assets/header.png)`,
         backgroundColor: "deepskyblue",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: { xs: "500px", md: "800px" },
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        flexDirection: "column",
-        padding: 2,
       }}
     >
-      <Typography variant="h3" color="inherit">
-        Big Title
-      </Typography>
-      <Typography variant="body1" color="inherit">
-        {text}
-      </Typography>
       <Box
         sx={{
+          maxWidth: "1440px",
+          margin: "0 auto",
+          padding: { xs: "0 24px", lg: "0 64px" },
+
+          height: "100%",
           display: "flex",
-          justifyContent: "center",
           alignItems: "center",
-          gap: "16px",
         }}
       >
-        <Button component={Link} to={to} variant="contained">
-          {buttonText}
-        </Button>
-        <Button component={Link} to={to} variant="outlined">
-          {buttonText}
-        </Button>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            flexDirection: "column",
+            gap: { xs: "20px", lg: "32px" },
+            height: "100%",
+            width: { xs: "100%", md: "560px" },
+            color: "background.default",
+          }}
+        >
+          <Typography variant={isXs ? "h3" : "h1"} color="inherit">
+            Discover the Beauty of Fraga fragrances
+          </Typography>
+          <Typography variant={isXs ? "body1" : "body2"} color="inherit">
+            Indulge in the enchanting scents that capture the essence of nature
+            and elegance.
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "16px",
+              width: "100%",
+              alignItems: { xs: "flex-start", md: "center" },
+              flexDirection: { xs: "column", md: "row" },
+            }}
+          >
+            <Button
+              color="secondary"
+              variant="contained"
+              sx={{
+                width: "150px",
+              }}
+              onClick={scrollToWonderland}
+            >
+              Wonderland
+            </Button>
+            <Button
+              variant="outlined"
+              color="info"
+              sx={{
+                width: "150px",
+              }}
+            >
+              En Savoir Plus
+            </Button>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
 };
 
-export default HeaderSwiper;
+export default Header;

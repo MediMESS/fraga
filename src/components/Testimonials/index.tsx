@@ -12,7 +12,7 @@ import "swiper/swiper-bundle.css";
 const testimonies = [
   {
     rating: 5,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.",
+    text: "The scents are an olfactory journey, and the personalized service made my Wonderlandping experience truly memorable. I've found my signature scent, and it's all thanks to Fraga!",
     author: {
       name: "Joanna Celery",
       job: "Yoga Coach",
@@ -24,7 +24,7 @@ const testimonies = [
   },
   {
     rating: 5,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.",
+    text: "Each visit feels like stepping into a world of sophistication and luxury. My perfume collection has been elevated by the gems I discovered here. An absolute must for those who appreciate the artistry of fragrance.",
     author: {
       name: "Pauline Croissant",
       job: "Marketing Agency Manager",
@@ -34,7 +34,6 @@ const testimonies = [
         "https://media.istockphoto.com/id/1136640630/photo/closeup-headshot-of-a-beautiful-black-woman.jpg?s=612x612&w=0&k=20&c=1P3RPPpGMnNvKCDlugCNWWqtb_tFDtdt9p-023ZG9P8=",
     },
   },
-  // Add more testimonies as needed
 ];
 
 // Create your functional component
@@ -60,6 +59,7 @@ const TestimonialSlider = () => {
           loop
           style={{
             overflowY: "visible",
+            margin: 0,
           }}
           navigation={{
             nextEl: ".testimonials-swiper-button-next",
@@ -72,7 +72,12 @@ const TestimonialSlider = () => {
         >
           {/* Map through the testimonies and create SwiperSlides */}
           {testimonies.map((testimony, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+              style={{
+                marginRight: 0,
+              }}
+            >
               <Box
                 sx={{
                   display: "flex",
@@ -81,10 +86,11 @@ const TestimonialSlider = () => {
                   flexDirection: "column",
                   margin: "0 auto",
                   maxWidth: "800px",
+                  gap: { xs: "20px", lg: "32px" },
                 }}
               >
                 {/* Star rating */}
-                <Box mb={2}>
+                <Box>
                   {Array.from({ length: testimony.rating }).map(() => (
                     <StarIcon
                       key={`${testimony.author}-${testimony.rating}`}
@@ -95,7 +101,6 @@ const TestimonialSlider = () => {
                 {/* Testimony text */}
                 <Typography
                   variant="body1"
-                  mb={2}
                   sx={{
                     fontSize: { xs: "16px", lg: "18px" },
                     textAlign: "center",
@@ -177,7 +182,7 @@ const TestimonialSlider = () => {
         {/* Custom navigation buttons */}
         <IconButton
           className="testimonials-swiper-button-prev"
-          style={{
+          sx={{
             position: "absolute",
             left: 0,
             zIndex: 1,
@@ -191,7 +196,7 @@ const TestimonialSlider = () => {
         </IconButton>
         <IconButton
           className="testimonials-swiper-button-next"
-          style={{
+          sx={{
             position: "absolute",
             right: 0,
             zIndex: 1,

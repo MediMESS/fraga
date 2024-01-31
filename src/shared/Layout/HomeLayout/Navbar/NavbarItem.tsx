@@ -8,11 +8,10 @@ import {
   usePopupState,
 } from "material-ui-popup-state/hooks";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { NavbarItemProp } from "src/shared/Layout/HomeLayout/Navbar/Navbar";
 
-export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
-  const { text, to, children } = navItem;
+export const DesktopNavbarItem = ({ navButton }: NavbarItemProp) => {
+  const { text, onClick, children } = navButton;
   const popupState = usePopupState({ variant: "popover", popupId: "demoMenu" });
 
   if (children)
@@ -33,12 +32,13 @@ export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
           transformOrigin={{ vertical: "top", horizontal: "left" }}
         >
           <List>
-            {children.map(({ text, to }) => (
+            {children.map(({ text, onClick }) => (
               <ListItemButton
                 key={text}
-                component={Link}
-                to={to}
-                onClick={popupState.close}
+                onClick={() => {
+                  popupState.close();
+                  onClick();
+                }}
               >
                 <ListItemText primary={text} />
               </ListItemButton>
@@ -48,14 +48,14 @@ export const DesktopNavbarItem = ({ navItem }: NavbarItemProp) => {
       </Box>
     );
   return (
-    <ListItemButton component={Link} to={to}>
+    <ListItemButton onClick={onClick}>
       <ListItemText primary={text} />
     </ListItemButton>
   );
 };
 
-const MobileNavbarItem = ({ navItem }: NavbarItemProp) => {
-  const { text, to, children } = navItem;
+const MobileNavbarItem = ({ navButton }: NavbarItemProp) => {
+  const { text, onClick, children } = navButton;
   const [open, setOpen] = useState(false);
 
   const handleToggle = () => {
@@ -71,12 +71,14 @@ const MobileNavbarItem = ({ navItem }: NavbarItemProp) => {
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding sx={{ marginLeft: "8px" }}>
-            {children.map(({ text, to }) => (
+            {children.map(({ text, onClick }) => (
               <ListItemButton
                 key={text}
-                component={Link}
-                to={to}
-                onClick={() => setOpen(false)}
+                sx={{ paddingLeft: 0 }}
+                onClick={() => {
+                  setOpen(false);
+                  if (onClick) onClick();
+                }}
               >
                 <ListItemText primary={text} />
               </ListItemButton>
@@ -88,7 +90,7 @@ const MobileNavbarItem = ({ navItem }: NavbarItemProp) => {
   }
 
   return (
-    <ListItemButton component={Link} to={to}>
+    <ListItemButton onClick={onClick} sx={{ paddingLeft: 0 }}>
       <ListItemText primary={text} />
     </ListItemButton>
   );

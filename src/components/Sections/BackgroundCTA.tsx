@@ -29,7 +29,7 @@ const BackgroundCTA = () => {
             md={10}
             sx={{
               display: "flex",
-              gap: { xs: "20px", lg: "42px" },
+              gap: { xs: "20px", lg: "32px" },
               flexDirection: "column",
             }}
           >

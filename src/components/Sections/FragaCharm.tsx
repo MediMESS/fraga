@@ -1,8 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { FragaCharmID } from "src/shared/Utils";
 
-const BestSeller = () => {
+const FragaCharm = () => {
   const fadeInAnimation = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -14,6 +15,7 @@ const BestSeller = () => {
 
   return (
     <Box
+      id={FragaCharmID}
       ref={ref}
       sx={{
         maxWidth: "1440px",
@@ -41,8 +43,9 @@ const BestSeller = () => {
             <AnimatePresence>
               <Box
                 component={motion.div}
+                className="shadow"
                 sx={{
-                  backgroundImage: "url(/assets/bestseller.png)",
+                  backgroundImage: "url(/assets/FragaCharm.png)",
                   height: { xs: "300px", lg: "520px" },
                   width: "100%",
                   backgroundSize: "cover",
@@ -91,16 +94,17 @@ const BestSeller = () => {
                   }}
                 >
                   <Typography variant="h2">
-                    The Irresistible Fragrance that Everyone is Talking About
+                    The Irresistible FragaCharm Elysian Essence
                   </Typography>
                   <Typography variant="h4">
-                    Discover the fragrance that embodies elegance and beauty.
+                    Discover the fragrance that embodies elegance and beauty
+                    that Everyone is Talking About.
                   </Typography>
                   <Typography variant="body1">
-                    Our main product is a perfect blend of simplicity and
-                    sophistication, designed to make you feel confident and
-                    alluring. Experience the enchanting scent that will
-                    captivate your senses and leave a lasting impression.
+                    Our main product <b>FragaCharm</b> is a perfect blend of
+                    simplicity and sophistication, designed to make you feel
+                    confident and alluring. Experience the enchanting scent that
+                    will captivate your senses and leave a lasting impression.
                   </Typography>
                 </Box>
               </motion.div>
@@ -112,4 +116,4 @@ const BestSeller = () => {
   );
 };
 
-export default BestSeller;
+export default FragaCharm;

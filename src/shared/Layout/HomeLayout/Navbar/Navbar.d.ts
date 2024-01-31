@@ -1,12 +1,12 @@
-export type navItemType = {
+export type navButtonType = {
   text: string;
   children?: {
     text: string;
-    to: string;
+    onClick: () => void;
   }[];
-  to: string;
+  onClick: () => void;
 };
 
 export type NavbarItemProp = {
-  navItem: navItemType;
+  navButton: navButtonType;
 };

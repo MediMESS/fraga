@@ -1,6 +1,6 @@
 // Import necessary modules from Material-UI and Swiper
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import {
   Box,
   IconButton,
@@ -8,12 +8,13 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { WonderlandID } from "src/shared/Utils";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 
 // Create your functional component
-const Shop = () => {
+const Wonderland = () => {
   const theme = useTheme();
 
   // Check if the screen size is below the lg breakpoint
@@ -21,15 +22,16 @@ const Shop = () => {
 
   // Array of image URLs
   const imageUrls = [
-    "/assets/shop/Image-0.png",
-    "/assets/shop/Image-1.png",
-    "/assets/shop/Image-2.png",
-    "/assets/shop/Image-3.png",
-    "/assets/shop/Image-4.png",
+    "/assets/Wonderland/Wonderland-0.png",
+    "/assets/Wonderland/Wonderland-1.png",
+    "/assets/Wonderland/Wonderland-2.png",
+    "/assets/Wonderland/Wonderland-3.png",
+    "/assets/Wonderland/Wonderland-4.png",
   ];
 
   return (
     <Box
+      id={WonderlandID}
       position="relative"
       sx={{
         display: "flex",
@@ -52,12 +54,12 @@ const Shop = () => {
         slidesPerView={isMobile ? 1 : 3}
         loop
         navigation={{
-          nextEl: ".shop-swiper-button-next",
-          prevEl: ".shop-swiper-button-prev",
+          nextEl: ".Wonderland-swiper-button-next",
+          prevEl: ".Wonderland-swiper-button-prev",
         }}
         pagination={{
           clickable: true,
-          el: ".shop-swiper-pagination",
+          el: ".Wonderland-swiper-pagination",
         }}
         style={{
           width: "100%",
@@ -72,6 +74,7 @@ const Shop = () => {
             }}
           >
             <Box
+              className="shadow"
               sx={{
                 backgroundImage: `url(${imageUrl})`,
                 height: { xs: "300px", lg: "400px" },
@@ -93,15 +96,44 @@ const Shop = () => {
       >
         {/* Pagination */}
         <Box>
-          <div className="shop-swiper-pagination"></div>
+          <div className="Wonderland-swiper-pagination"></div>
         </Box>
         {/* Custom navigation buttons */}
-        <Box>
-          <IconButton className="shop-swiper-button-prev">
-            <NavigateBeforeIcon />
+        <Box
+          sx={{
+            display: "flex",
+            gap: { xs: "8px", lg: "16px" },
+          }}
+        >
+          <IconButton
+            className="Wonderland-swiper-button-prev"
+            sx={{
+              border: `1px solid`,
+              borderColor: "primary.main",
+              width: { xs: "32px", lg: "42px" },
+              height: { xs: "32px", lg: "42px" },
+            }}
+          >
+            <ArrowBackIcon
+              sx={{
+                fontSize: { xs: "20px", lg: "32px" },
+              }}
+            />
           </IconButton>
-          <IconButton className="shop-swiper-button-next">
-            <NavigateNextIcon />
+          <IconButton
+            className="Wonderland-swiper-button-next"
+            sx={{
+              border: `1px solid`,
+              borderColor: "primary.main",
+              width: { xs: "32px", lg: "42px" },
+              height: { xs: "32px", lg: "42px" },
+            }}
+          >
+            <ArrowForwardIcon
+              sx={{
+                fontSize: { xs: "20px", lg: "32px" },
+              }}
+            />
           </IconButton>
         </Box>
       </Box>
@@ -110,4 +142,4 @@ const Shop = () => {
 };
 
 // Export your component
-export default Shop;
+export default Wonderland;

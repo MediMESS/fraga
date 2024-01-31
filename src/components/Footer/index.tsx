@@ -1,122 +1,155 @@
-import { Container, Grid, Typography, Link, Box } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import XIcon from "@mui/icons-material/X";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { Link as LinkRouterDOM } from "react-router-dom";
+import {
+  scrollToFAQs,
+  scrollToFragaCharm,
+  scrollToTheFragaristas,
+  scrollToWonderland,
+} from "src/shared/Utils";
+
+const fragaFooterLinks = [
+  {
+    text: "FragaCharm",
+    onClick: scrollToFragaCharm,
+  },
+  {
+    text: "Wonderland",
+    onClick: scrollToWonderland,
+  },
+  {
+    text: "The Fragaristas",
+    onClick: scrollToTheFragaristas,
+  },
+  {
+    text: "FAQs",
+    onClick: scrollToFAQs,
+  },
+];
+
+const socialIcons = [
+  {
+    id: "FacebookIcon",
+    icon: FacebookIcon,
+  },
+  {
+    id: "InstagramIcon",
+    icon: InstagramIcon,
+  },
+  {
+    id: "XIcon",
+    icon: XIcon,
+  },
+  {
+    id: "YouTubeIcon",
+    icon: YouTubeIcon,
+  },
+  {
+    id: "LinkedInIcon",
+    icon: LinkedInIcon,
+  },
+];
 
 const Footer = () => {
   return (
     <footer>
       <Box
         sx={{
-          marginTop: "30px",
-          backgroundColor: "primary.light",
-          color: "primary.contrastText",
-          padding: "20px 0",
+          backgroundColor: "secondary.main",
         }}
       >
-        <Container>
-          <Grid container spacing={3} alignItems="flex-start">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: { xs: "20px", lg: "32px" },
+            padding: { xs: "20px 24px", lg: "40px 64px" },
+            maxWidth: "1440px",
+            margin: "0 auto",
+            position: "relative",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", lg: "row" },
+              gap: { xs: "20px", lg: "32px" },
+              justifyContent: { xs: "flex-start", lg: "space-between" },
+              alignItems: { xs: "flex-start", lg: "center" },
+            }}
+          >
             {/* Logo Section */}
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                <img
-                  src="./assets/logo.svg"
-                  alt="Logo"
-                  style={{ height: "40px", marginRight: "10px" }}
-                />
-              </Typography>{" "}
-              <Typography variant="body1">
-                L'Engineering par Excellence.
-              </Typography>
-              <Typography variant="subtitle2">
-                <Typography
-                  component="span"
-                  variant="subtitle2"
-                  sx={{
-                    textDecoration: "underline",
-                  }}
-                >
-                  Tel:
-                </Typography>{" "}
-                021 60 91 85
-              </Typography>
-              <Typography variant="subtitle2">
-                <Typography
-                  component="span"
-                  variant="subtitle2"
-                  sx={{
-                    textDecoration: "underline",
-                  }}
-                >
-                  Phone:
-                </Typography>{" "}
-                06 76 86 77 68
-              </Typography>
-              <Typography variant="subtitle2">
-                Sidi Yahia, Lot4, Hydra 16035 - Alger -
-              </Typography>
-            </Grid>
+            <LinkRouterDOM to="/">
+              <img
+                src="/assets/logo-primary.png"
+                alt="Logo"
+                style={{
+                  height: "60px",
+                }}
+              />
+            </LinkRouterDOM>
 
             {/* Link Sections */}
-            <Grid item xs={12} sm={2}>
-              <Typography variant="body1">Services</Typography>
-              <nav>
-                <Link
-                  component={LinkRouterDOM}
-                  to="/zz-engineering/etude-hse"
-                  color="inherit"
-                  variant="body2"
-                >
-                  Etude HSE
-                </Link>
-                <br />
-                <Link
-                  component={LinkRouterDOM}
-                  to="/zz-engineering/engineering-design"
-                  color="inherit"
-                  variant="body2"
-                >
-                  Engineering & Design
-                </Link>
-                <br />
-                <Link
-                  component={LinkRouterDOM}
-                  to="/zz-engineering/formation"
-                  color="inherit"
-                  variant="body2"
-                >
-                  Formation
-                </Link>
-              </nav>
-            </Grid>
 
-            <Grid item xs={12} sm={2}>
-              <Typography variant="body1">Secteur d'activités</Typography>
-              <nav>
-                <Link
-                  component={LinkRouterDOM}
-                  to="/secteurs-activites"
-                  color="inherit"
-                  variant="body2"
+            <Box
+              sx={{
+                display: "flex",
+                gap: { xs: "12px", lg: "20px" },
+                flexDirection: { xs: "column", lg: "row" },
+                alignItems: { xs: "flex-start", lg: "space-between" },
+              }}
+            >
+              {fragaFooterLinks.map(({ text, onClick }) => (
+                <Button
+                  variant="text"
+                  key={text}
+                  onClick={onClick}
+                  sx={{
+                    textDecoration: "underline",
+                    minWidth: 0,
+                    padding: 0,
+                  }}
                 >
-                  Oil & GAS
-                </Link>
-              </nav>
-            </Grid>
-
-            <Grid item xs={12} sm={2}>
-              <Typography variant="body1">Contact</Typography>
-              <nav>
-                <Link
-                  component={LinkRouterDOM}
-                  to="/zz-engineering/contact"
-                  color="inherit"
-                  variant="body2"
-                >
-                  Contactez-nous
-                </Link>
-              </nav>
-            </Grid>
-          </Grid>
-        </Container>
+                  {text}
+                </Button>
+              ))}
+            </Box>
+            {/* Social */}
+            <Box
+              sx={{
+                display: "flex",
+                gap: { xs: "12px", lg: "20px" },
+              }}
+            >
+              {socialIcons.map((SocialIcon) => (
+                <a key={SocialIcon.id} href="#">
+                  <Button
+                    sx={{
+                      padding: 0,
+                      minWidth: 0,
+                    }}
+                    variant="text"
+                  >
+                    <SocialIcon.icon
+                      sx={{
+                        fontSize: "24px",
+                      }}
+                    />
+                  </Button>
+                </a>
+              ))}
+            </Box>
+          </Box>
+          <Divider />
+          {/* Logo Section */}
+          <Typography variant="body1">
+            2023 Fraga. All rights reserved.
+          </Typography>
+        </Box>
       </Box>
     </footer>
   );
